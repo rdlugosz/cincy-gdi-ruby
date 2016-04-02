@@ -229,39 +229,71 @@ Hello World!
 
 
         <section>
-          <h1>We've seen a lot of things!</h1>
+          <section>
+            <h1>Intrigued?</h1>
+            <p class="fragment">Let's talk in more detail about some of the things we learned.</p>
+          </section>
+
+          <section>
+            <h2>Using a REPL</h2>
+            <ul>
+              <li>Try Ruby is a <em>REPL</em></li>
+              <li>Read, Evaluate, Print, Loop</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>repl.it</h2>
+            <p class="frament"><a href="https://repl.it/" target="repl">repl.it</a> is an online REPL that supports several different languages. It's a great place to try things, and makes it easy for us to share links to our code in class.</p>
+            <p class="frament">Visit the repl.it site and select "Ruby" from the menu.</p>
+          </section>
+
+          <section>
+            <h3>Working with IRB</h3>
+            <h4>(optional)</h4>
+            <ul>
+              <li class="fragment">IRB (Interactive RuBy) is a command line interface to ruby that is installed when we install Ruby. It works like a calculator and is a
+                great way to get started quickly.
+              </li>
+              <li class="fragment">Open: type `irb`</li>
+              <li class="fragment">Quit: Type `quit` and then press `enter`</li>
+              <li class="fragment">Feel free to explore. You will not accidentally break things!</li>
+            </ul>
+          </section>
         </section>
 
 
         <section>
-          <h3>Arithmetic</h3>
-          <p class="box">Try out some calculator functions</p>
-          <pre><code contenteditable data-noescape class="ruby">
-              3 + 4
+          <section>
+            <h3>Arithmetic</h3>
+            <p class="box">Try out some calculator functions</p>
+            <pre><code contenteditable data-noescape class="ruby">
+                3 + 4
 
-              2 * 4
+                2 * 4
 
-              6 - 2
+                6 - 2
 
-              4 / 2
-<span class="fragment">
-              4 /* 2
-</span><span class="fragment">
-              =&gt; SyntaxError: (irb):10:syntax error, unexpected *</span>
-            </code></pre>
-        </section>
+                4 / 2
+  <span class="fragment">
+                4 /* 2
+  </span><span class="fragment">
+                =&gt; SyntaxError: (irb):10:syntax error, unexpected *</span>
+              </code></pre>
+          </section>
 
-        <section>
-          <h3>Arithmetic</h3>
-          <p class="box">Other Ruby Math Operators</p>
-          <pre><code contenteditable class="ruby">
-              11 % 5
-              =&gt; 1
+          <section>
+            <h3>Arithmetic</h3>
+            <p class="box">Other Ruby Math Operators</p>
+            <pre><code contenteditable class="ruby">
+                11 % 5
+                =&gt; 1
 
-              2 ** 3
-              =&gt; 8
+                2 ** 3
+                =&gt; 8
 
-            </code></pre>
+              </code></pre>
+          </section>
         </section>
 
         <section>
@@ -274,10 +306,10 @@ Hello World!
               starting point when searching for help online.
             </li>
           </ul>
-          <pre class="fragment"><code contenteditable class="ruby">
-          irb> hi
-          NameError: undefined local variable or method `hi' for main:Object
-            </code></pre>
+<pre class="fragment"><code contenteditable class="ruby">
+irb> hi
+NameError: undefined local variable or method `hi' for main:Object
+  </code></pre>
         </section>
 
       <!-- Variables - 10 min -->
@@ -289,14 +321,14 @@ Hello World!
             <li class="fragment">We reference variables by name.</li>
             <li class="fragment">They are called variables because the<br/>information they reference may change.</li>
           </ul>
-          <pre class="fragment"><code contenteditable class="ruby">
-            # Everything after this pound sign will not be evaluated.
-            # These are called comments and I will use them to annotate code
-            age = 50
-            days_in_year = 365
-            days_alive = age * days_in_year
-            => 18250
-          </code></pre>
+<pre class="fragment"><code contenteditable class="ruby">
+  # Everything after this pound sign will not be evaluated.
+  # These are called comments and I will use them to annotate code
+  age = 50
+  days_in_year = 365
+  days_alive = age * days_in_year
+  => 18250
+</code></pre>
         </section>
 
         <section>
