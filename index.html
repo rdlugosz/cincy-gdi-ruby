@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>GDI Cincinnati -- Intro to Ruby Programming</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+    <!-- dark editor--><link rel="stylesheet" href="lib/css/dark.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+            <img src="images/circle-gdi-logo.png" class="img--bare" height="268px" />
+          <h1>Intro to Ruby Programming</h1>
+          <h3>GDI Cincinnati Chapter</h3>
+          <p>
+            <small>Ryan Dlugosz 2016, based on GDI Seattle and Dayton courses.</small>
+          </p>
+        </section>
+
+        <!-- GDI Admin stuff -->
+        <section>
+          <section>
+            <h3>Welcome!</h3>
+            <div class="left-align">
+              <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and
+                hands-on instruction.
+              </p>
+              <p class="green">Some "rules"</p>
+              <ul>
+                <li>We are here for you!</li>
+                <li>Every question is important.</li>
+                <li>Help each other.</li>
+                <li>Have fun!</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h3>What we will cover today</h3>
+            <ul>
+              <li class="fragment">What is programming?</li>
+              <li class="fragment">Why Ruby?</li>
+              <li class="fragment">Variables, Arithmetic &amp; Objects</li>
+              <li class="fragment">Methods and Error Messages</li>
+              <li class="fragment"><abbr title="Read-Evaluate-Print-Loop">REPLs</abbr> and Installing Ruby</li>
+            </ul>
+          </section>
+          <section>
+            <h3>About Me</h3>
+            <ul>
+              <li class="fragment">Ryan Dlugosz <span class="fragment">(duh-LOO-gus... <span class="fragment">it's Polish</span>)</span></li>
+              <li class="fragment">Independent Consultant, Ruby (mostly)</li>
+              <li class="fragment"><a href="mailto:ryan@dlugosz.net">ryan@dlugosz.net</a></li>
+              <li class="fragment">GDI Slack: @ryandlugosz / #intro-to-ruby</li>
+            </ul>
+          </section>
+          <section>
+            <h3>About the TAs</h3>
+            <p>TBD</p>
+          </section>
+
+          <section>
+            <h3>About YOU!</h3>
+            <ol>
+              <li>Who are you?</li>
+              <li>What do you hope to get out of this class?</li>
+              <li>What is your programming experience?</li>
+            </ol>
+            <aside>
+              Try to load all the names into the <a href="https://repl.it/CB7a/4" target="_blank">Greeter Demo</a> during intros...
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Our facilities today&hellip;</h2>
+            <ul>
+              <li>
+                Restrooms - Down the first hall on the left.
+              </li>
+              <li>
+                Refreshments - Help yourself!
+                <br>
+                <small>PS &ndash; Thanks Cardinal!</small>
+              </li>
+              <li>
+                Please step out to take a call.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+
+        <!-- Begin Ruby Class I -->
+
+        <section>
+          <h1>What is Programming?</h1>
+          <ul>
+            <li class="fragment">Using a computer to solve a problem.</li>
+            <li class="fragment">We use Programming Languages (code!) to <em>speak</em> to the computer.</li>
+          </ul>
+          <aside class="notes">What is "a problem"? Pretty much anything from
+            adding two numbers to landing a satellite on an asteroid.</aside>
+        </section>
+
+        <section data-background="/images/lovelace-program.jpg" data-background-size="contain" data-transition-speed="slow" data-transition="fade-in">
+          <h1>Ada Lovelace</h1>
+          <div><img data-src="/images/ada.jpg" /></div>
+          <aside class="notes">Ada Lovelace is generally regarded as the first
+            computer programmer. She was a mathematician and wrote an algorithm
+            that a machine could use to generate a specific series of numbers.
+            The background of this slide are her notes&mdash;the first computer
+            program.</aside>
+        </section>
+
+        <section>
+          <h1>What is Code?</h1>
+          <ul>
+            <li class="fragment">Computers understand 1s and 0s</li>
+            <li class="fragment"><em>Code</em> is human-readable</li>
+            <li class="fragment">Programming Languages over time have become more human-readable, but all end up as 1s and 0s</li>
+          </ul>
+          <aside class="notes"></aside>
+        </section>
+
+
+        <section>
+
+          <section>
+            <h1>Why Ruby?</h1>
+            <h3 class="fragment">Ruby is a Powerful language that reads like English!</h3>
+            <h3 class="fragment">Designed for Programmer Happiness!</h3>
+            <h4 class="fragment">Welcoming, friendly community!</h4>
+
+<pre class="fragment"><code data-trim data-noescape>&gt; <span class="fragment">Ruby.easy_to_learn? <span class="fragment">and</span> <span class="fragment">Ruby.fun_to_use?</span></span>
+<span class="fragment">=&gt; true</span></code></pre>
+          </section>
+
+
+          <section>
+            <h1>What do you think this Ruby code does?</h1>
+
+<pre><code data-trim data-noescape>
+ruby&gt; <span class="fragment">1 + 1</span>
+<span class="fragment">
+   =&gt; 2
+</span>
+</code></pre>
+
+          </section>
+
+          <section>
+            <h1>Okay, that was pretty easy&hellip; Try this one!</h1>
+            <h3>What does this code do?</h3>
+
+<pre><code data-trim data-noescape>
+ruby&gt; <span class="fragment">puts "Hello World!"</span>
+<span class="fragment">
+Hello World!
+</span>
+</code></pre>
+
+          </section>
+
+          <section>
+            <h1>Let's say it three times!</h1>
+
+<pre><code data-trim data-noescape>
+ruby&gt; <span class="fragment">3.times do</span>
+        <span class="fragment">puts "Hello World!"</span>
+      <span class="fragment">end</span>
+<span class="fragment">
+Hello World!
+Hello World!
+Hello World!
+</span>
+</code></pre>
+
+
+            <h3 class="fragment">Cool, huh?</h3>
+            <p class="fragment">Let's start coding for real!</p>
+          </section>
+
+        </section>
+
+
+        <section>
+          <a href="http://tryruby.backcovesoftware.com" target="_blank"><img data-src="/images/try-ruby.png"></a>
+          <h3><a href="http://tryruby.backcovesoftware.com" target="_blank"><strong>Try Ruby</strong></a></h3>
+          <p>For now, focus on what we're able to accomplish without worrying too much about remembering exactly <em>how</em> we're doing it. <em>That intuition will develop in time!</em></p>
+
+          <aside class="notes">
+            Work together with the class in the Try Ruby environment for the first couple of levels. They will do more of this for homework. We'll see a lot of things we
+          </aside>
+        </section>
+
+
+
+        <section>
+          <section>
+            <h1>Intrigued?</h1>
+            <p class="fragment">Let's talk in more detail about some of the things we learned.</p>
+          </section>
+
+          <section>
+            <h2>Using a REPL</h2>
+            <ul>
+              <li>Try Ruby is a <em>REPL</em></li>
+              <li>Read, Evaluate, Print, Loop</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>repl.it</h2>
+            <p class="frament"><a href="https://repl.it/" target="repl">repl.it</a> is an online REPL that supports several different languages. It's a great place to try things, and makes it easy for us to share links to our code in class.</p>
+            <p class="frament">Visit the repl.it site and select "Ruby" from the menu.</p>
+          </section>
+
+          <section>
+            <h3>Working with IRB</h3>
+            <h4>(optional)</h4>
+            <ul>
+              <li class="fragment">IRB (Interactive RuBy) is a command line interface to ruby that is installed when we install Ruby. It works like a calculator and is a
+                great way to get started quickly.
+              </li>
+              <li class="fragment">Open: type `irb`</li>
+              <li class="fragment">Quit: Type `quit` and then press `enter`</li>
+              <li class="fragment">Feel free to explore. You will not accidentally break things!</li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h3>Arithmetic</h3>
+            <p class="fragment">Try out some calculator functions</p>
+            <pre class="fragment">
+              <code contenteditable class="ruby">
+3 + 4
+2 * 4
+6 - 2
+4 / 2
+4 /* 2
+=&gt; SyntaxError: (irb):10:syntax error, unexpected *
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h3>Arithmetic</h3>
+            <p class="fragment">Other Ruby Math Operators</p>
+            <pre class="fragment"><code contenteditable class="ruby">
+# Modulo operator (returns the remainder)
+11 % 5
+=&gt; 1
+
+# Exponent operator (2 raised to the power of 3)
+2 ** 3
+=&gt; 8
+              </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h3>Errors are Neat!</h3>
+          <ul>
+            <li class="fragment">There are different kinds of errors that can occur. We just saw the <strong>SyntaxError</strong> which often
+              helps us find misspelled words or missing quotes.
+            </li>
+            <li class="fragment ">Take time to read each Error. They often tell you how to fix the issue and can be a great
+              starting point when searching for help online.
+            </li>
+          </ul>
+<pre class="fragment"><code contenteditable class="ruby">
+irb&gt; hi
+NameError: undefined local variable or method `hi' for main:Object
+</code></pre>
+        </section>
+
+      <!-- Variables - 10 min -->
+      <section>
+        <section>
+          <h3>Variables</h3>
+          <ul>
+            <li class="fragment">Variables are references to information.</li>
+            <li class="fragment">We reference variables by name.</li>
+            <li class="fragment">They are called variables because the<br/>information they reference may change.</li>
+          </ul>
+<pre class="fragment"><code contenteditable class="ruby">
+# Everything after the pound sign will not be evaluated.
+# These are called comments and I will use them to annotate code
+age = 50
+days_in_year = 365
+days_alive = age * days_in_year
+=&gt; 18250
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Variables, Constants, Symbols</h3>
+          <ul>
+            <li class="fragment">Ruby has variables, constants and literals.</li>
+            <li class="fragment">A variable starts with a lower case letter and multiple words are separated with an underscore character (_), <code>like_this</code>.</li>
+            <li class="fragment">Constants do not change and are typically written in all caps.</li>
+            <li class="fragment">A <code>symbol</code> is a shorthand for a constant string.</li>
+            <li class="fragment">Literals are literal values, for example the number 3 or the string 'hi'.</li>
+          </ul>
+
+          <pre class="fragment"><code contenteditable class="ruby">
+# variables
+age = 37
+instructor_name = "Ryan Dlugosz"
+
+# constants
+BEST_FOOD = "Sushi"
+PI = 3.14159
+
+# symbols
+:pizza
+:ice_cream
+
+# literals
+3
+'hi'
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>What can I do with a Variable?</h3>
+          <ul>
+            <li class="fragment">Create - Initialize - Define</li>
+            <li class="fragment">Access - Read</li>
+            <li class="fragment">Assign - Replace</li>
+          </ul>
+          <pre class="fragment"><code contenteditable class="ruby ">
+# create and assign in one line
+age = 0
+
+# access the value in age
+age
+
+# replace value in age
+age = 40
+
+# use it in a statement
+age + 10        # => 50
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Variable naming</h3>
+          <ul>
+            <li class="fragment">Make it meaningful</li>
+            <li class="fragment">Make it easy to read</li>
+            <li class="fragment">Make it concise</li>
+            <li class="fragment">Should be unique</li>
+            <li class="fragment">Should be understood by someone who has no idea what your program does</li>
+          </ul>
+          <pre class="fragment"><code contenteditable class="ruby ">
+# good
+occupation = "software developer"
+
+<span class="fragement">
+# bad
+occupation_i_always_dreamed_of_having_in_cincy = "software developer"
+o = "software developer"
+1st_occupation = "software developer"
+</span>
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Local Variable Values</h3>
+          <ul>
+            <li class="fragment">No default value</li>
+            <li class="fragment">No type declaration</li>
+            <li class="fragment">Do not live forever</li>
+          </ul>
+          <pre class="fragment"><code contenteditable class="ruby">
+# error
+name
+
+<span class="fragment">
+  # defined, initialize, create
+  name = "KC"
+  defined?(name)      # => true
+</span>
+          </code></pre>
+        </section>
+      </section>
+
+      <!-- Data Types - 10 min -->
+      <section>
+        <section>
+          <h2>Data Types</h2>
+          <p class="fragment">Numbers &nbsp; | &nbsp; Strings &nbsp; | &nbsp; Symbols &nbsp; | &nbsp; Booleans<br/>Regular Expressions &nbsp; | &nbsp; Arrays &nbsp; | &nbsp; Ranges &nbsp; | &nbsp; Hashes</p>
+          <ul>
+            <li class="fragment">Data always has a "type"</li>
+            <li class="fragment">You will hear the words Class/Type/Object used interchangeably</li>
+            <li class="fragment">Let's explore a few built in Objects</li>
+          </ul>
+          <pre class="fragment"><code contenteditable class="ruby">
+          irb> 1.class
+          => Fixnum
+
+          irb> "Hello".class
+          => String
+
+          irb> 1.0022.class
+          => Float
+
+          irb> [1,2,3].class
+          => Array
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Numbers</h3>
+          <p class="">Numeric data comes in two types: <strong>Integers</strong> and <strong>Floats</strong></p>
+          <div  class="fragment">
+          <p class="">Integers are either <strong>Fixnum</strong> or <strong>Bignum</strong>. They do not have decimals.</p>
+          <pre style="height: 120px; overflow:hidden;"><code contenteditable class="ruby">
+            irb> 1_000_000_000_000_000_000.class
+              => Fixnum
+            irb> 1_000_000_000_000_000_000_000.class
+              => Bignum
+          </code></pre>
+          </div>
+          <div class="fragment">
+          <p class="">Floats have at least one number to the left of a decimal point.</p>
+          <pre style="height: 120px; overflow:hidden;" class=""><code contenteditable class="ruby ">
+            irb> 1.001.class
+              => Float
+          </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h3>Number Practice</h3>
+          <pre><code contenteditable class="ruby">
+          7/8
+          7.0/8.0
+          3.14.to_s
+          3.14.to_i
+          1 + "2"
+          1 + "2".to_i
+          (1 + 2) * 3
+          1 + (2 * 3)
+          </code></pre>
+          <p>How many seconds are in an hour?</p>
+          <p>How many minutes are in a week?</p>
+          <p>How many years old are you if you've been alive 1 million seconds?</p>
+        </section>
+
+        <section>
+          <h3>Strings</h3>
+          <p class="">Strings are characters inside double or single quotes.</p>
+          <pre class="fragment"><code contenteditable class="ruby">
+          a = 'Hello '
+          b = "World"
+          c = a + b
+          c.reverse
+          => "dlroW olleH"
+          </code></pre>
+          <pre class="fragment"><code contenteditable class="ruby ">
+          a = "Spam "
+
+          # Here multiplying a by 4 concatenates (links) four strings together
+          b = a * 4
+          =>"Spam Spam Spam Spam "
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>String Practice</h3>
+          <pre><code contenteditable class="ruby">
+          "Heather".upcase
+          "Heather".downcase
+          "heather".capitalize
+          "Hello".reverse
+          "Heather".length
+          "Heather Moore".swapcase
+          "".empty?
+          </code></pre>
+          <p>What is the reverse of your name?</p>
+          <p>How many characters long is your name?</p>
+          <p>Can you repeat the word hello 100 times?</p>
+          <p>What is the 5th character of my name?</p>
+        </section>
+
+      <!-- Methods -->
+
+        <section>
+          <h3>Methods</h3>
+          <ul>
+            <li class="fragment">Methods define the behavior for an Object.</li>
+            <li class="fragment">The "." is an operator that connects the Object of the method to the method.</li>
+            <li class="fragment">String Objects can <strong>reverse</strong>, for example.</li>
+            <li class="fragment">Let's call some methods</li>
+          </ul>
+          <pre class="fragment"><code contenteditable class="ruby">
+          irb> puts "hello"
+          hello
+          => nil
+
+          irb> "2".to_i
+          => 2
+
+          irb> 2.to_s
+          => "2"
+
+          irb> "2" / 5
+          NoMethodError: undefined method `/' for "2":String
+            </code></pre>
+        </section>
+        <section>
+          <h3>User Input</h3>
+          <ul>
+            <li class="fragment">To obtain user input, use <code>gets</code></li>
+            <li class="fragment">To print out information, use <code>puts</code></li>
+            <li class="fragment">Let's create our first program together</li>
+          </ul>
+          <div class="fragment"><p>Put the code below in a file and save it as name.rb</p>
+                      <pre style="height: 120px; overflow:hidden;"><code contenteditable class=" ruby">
+                      puts 'Hello there, and what\'s your name?'
+                      name = gets
+                      puts 'Your name is ' + name.chomp! + '? What a lovely name!'
+                      puts 'Pleased to meet you, ' + name + '. :)'
+                      </code></pre></div>
+          <div class="fragment"><p>Run your program from the command line:</p>
+                      <pre style="height: 80px; overflow:hidden"><code>
+                        ruby name.rb
+                      </code></pre></div>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1>Installing Ruby</h1>
+          <h3>(supplemental)</h3>
+          <p>The following slides are included for reference, but are not required steps for completing this Intro to Ruby class. If you have any trouble, please ask me for help in the GDI Slack channel.</p>
+        </section>
+
+        <section>
+          <h2>Using a Mac?</h2>
+          <p>If you happen to be using a Mac, Ruby is already installed on your computer!</p>
+
+          <h2>Using a Windows PC?</h2>
+          <p>Download and run the <a href="http://railsinstaller.org/">Rails Installer for Windows (Ruby 2.2 version)</a>.</p>
+
+        </section>
+        <section>
+          <h3>RailsBridge Installfest</h3>
+          <p>The RailsBridge organization maintains a great resource for installing Ruby on your computer. <a href="http://docs.railsbridge.org/installfest/" alt="railsbridge installfest">Check it out!</a></p>
+          <p>These instructions could be helpful if you run into trouble.</p>
+          <p class="green">http://docs.railsbridge.org/installfest/</p>
+          <p>Just work through the instructions for your operating system. For our class, you'll only need to advance through the first steps, but you're welcome to advance further if you're curious or plan to write a Rails applications.</p>
+        </section>
+
+        <!-- Part 2: Intro to Terminal, 20 minutes -->
+        <section>
+          <h3>Intro to Terminal</h3>
+          <p>Working in the terminal can be really intimidating at first!</p>
+          <p>With practice, navigation and file manipulation is significantly faster in the terminal than in the GUI.</p>
+          <p>Professional software developers use the terminal all the time, and this class will require some use of it.</p>
+        </section>
+
+        <section>
+          <h3>Intro to Terminal</h3>
+          <p>Mac & Linux users: Open <strong>Terminal</strong></p>
+          <p>Windows users: Open <strong>Git-Bash</strong></p>
+          <br >
+          <p>We will not be using Windows "cmd" program, as it uses a different syntax than *NIX systems.</p>
+        </section>
+
+        <section>
+          <h3>Intro to Terminal Prompt</h3>
+          <p>The line that appears in the terminal when you open it is called the prompt. It usually contains information about the user and current directory. It can be customized.</p>
+          <img src="images/prompt1.png" alt="example prompt">
+          <img src="images/prompt2.png" alt="example prompt">
+          <img src="images/prompt3.png" alt="example prompt">
+          <img src="images/prompt4.png" alt="example prompt">
+          <img src="images/prompt5.png" alt="example prompt">
+          <p>Terminal instructions often start a line with a $. This represents the last character in the prompt, you don't have to type it.</p>
+        </section>
+
+        <section>
+          <h3>Terminal Cheatsheet</h3>
+          <table style="font-size: 20px; line-height: 1.4em;">
+            <tr>
+              <td><code>.</code></td>
+              <td>the current directory- ex: "touch ./wow.txt"</td>
+            </tr>
+            <tr>
+              <td><code>..</code></td>
+              <td>the parent of current directory - ex: "cd ../RubyParty"</td>
+            </tr>
+            <tr>
+              <td><code>~</code></td>
+              <td>the root directory- ex: "cd ~/Pictures"</td>
+            </tr>
+            <tr>
+              <td><code>cd [location]</code></td>
+              <td>"change directory" to [location]</td>
+            </tr>
+            <tr>
+              <td><code>pwd</code></td>
+              <td>"present working directory" - where am I?</td>
+            </tr>
+            <tr>
+              <td><code>ls -al</code></td>
+              <td>"list all" of the contents of current directory, including invisible ones</td>
+            </tr>
+            <tr>
+              <td><code>touch [filename.extension]</code></td>
+              <td>create a file called filename.extension in the current directory</td>
+            </tr>
+            <tr>
+              <td><code>mkdir [directoryname]</code></td>
+              <td>create a directory called directoryname in the current directory</td>
+            </tr>
+            <tr>
+              <td><code>rm [filename]</code></td>
+              <td>"remove" (delete) the file called filename</td>
+            </tr>
+            <tr>
+              <td><code>rm -rf [directoryname]</code></td>
+              <td>"remove recursively with force" the directory called directoryname</td>
+            </tr>
+            <tr>
+              <td><code>clear OR cmd+k</code></td>
+              <td>clear the terminal screen</td>
+            </tr>
+            <tr>
+              <td><code>help</code></td>
+              <td>lists all possible commands</td>
+            </tr>
+            <tr>
+              <td><code>man [command]</code></td>
+              <td>displays the manual for command</td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h3>Terminal Activities</h3>
+          <pre><code class="terminal">
+  # navigate to your desktop
+  cd ~/Desktop    #Linux, Mac
+  cd desktop      #Windows
+
+  # make a directory called ruby_adventures
+  mkdir ruby_adventures
+
+  # navigate into new directory
+  cd ruby_adventures
+
+  # create a file
+  touch class0.rb
+
+  # list the contents of the directory
+  ls
+            </code></pre>
+        </section>
+
+        <section>
+          <h3>Terminal Activities</h3>
+          <pre><code class="terminal">
+    man ls
+            </code></pre>
+          <p>Output:</p>
+          <img src="images/manls.png" >
+        </section>
+      </section>
+
+
+
+      <section>
+        <section>
+          <h2>End of Day 1<span class="fragment">!!!</span></h2>
+        </section>
+
+        <section>
+          <h1>Homework!</h1>
+
+          <ul>
+            <li class="fragment">Join <a href="http://slack.gdicincy.com/" target="_blank">GDI Slack</a> &amp; #intro-to-ruby</li>
+            <li class="fragment">Complete the <a href="https://code.org/mc" target="hoc">Hour of Code</a></li>
+            <li class="fragment">Explore more of the <a href="http://tryruby.backcovesoftware.com" target="try-ruby">Try Ruby</a> challenges</li>
+            <li class="fragment">Bonus: Chapters 0&ndash;6 of <em><a href="https://pine.fm/LearnToProgram/" target="learn-to-program">Learn to Program</a></em></li>
+            <ul class="fragment">
+              <li><em>While you can follow the book's instructions and install Ruby on your computer, you may find it easier to use the online tool <a href="https://repl.it">repl.it</a></em></li>
+            </ul>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Next Week</h1>
+
+          <ul>
+            <li>Review homework</li>
+            <li>Flow control (<code>if/then/else</code> and friends)</li>
+            <li>Arrays and Hashes</li>
+            <li>Looping and Enumeration</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Upcoming Events</h3>
+          <div>
+            <br />
+            <h4>TBD</h4>
+            <h4><small>Some date, some time</small></h4>
+            <p><small>Sounds like this will be great!</small></p>
+            <br/>
+            <h4>Even more TBD!</h4>
+            <h4><small>Another date, another time</small></h4>
+            <p><small>Wow. Can't wait to see you there!</small></p>
+            <aside class="notes">Check with Becky for some upcoming events...</aside>
+          </div>
+        </section>
+      </section>
+
+
+      </div> <!-- END OF SLIDES!!!1 -->
+      <footer>
+        <div class="copyright">
+          Intro to Ruby &ndash; Ryan Dlugosz &ndash; gdi-ruby.backcovesoftware.com
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" width="50px" /></a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
