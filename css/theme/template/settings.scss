@@ -13,14 +13,13 @@ $mainColor: #eee;
 $blockMargin: 20px;
 
 // Headings
-$headingMargin: 0 0 $blockMargin 0;
+$headingMargin: 0 0 20px 0;
 $headingFont: 'League Gothic', Impact, sans-serif;
 $headingColor: #eee;
-$headingLineHeight: 1.2;
-$headingLetterSpacing: normal;
+$headingLineHeight: 0.9em;
+$headingLetterSpacing: 0.02em;
 $headingTextTransform: uppercase;
-$headingTextShadow: none;
-$headingFontWeight: normal;
+$headingTextShadow: 0px 0px 6px rgba(0,0,0,0.2);
 $heading1TextShadow: $headingTextShadow;
 
 $heading1Size: 3.77em;

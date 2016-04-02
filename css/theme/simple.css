@@ -1,29 +1,58 @@
-/**
- * A simple theme for reveal.js presentations, similar
- * to the default theme. The accent color is darkblue.
- *
- * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
- * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
- */
-@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Open+Sans:400,300,600,700);
+
+@font-face {
+  font-family: "Gotham";
+  src: local("Gotham"), url("fonts/Gotham/Gotham-Medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Gotham-Book";
+  src: local("Gotham-Book"), url("fonts/Gotham/Gotham-Book.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Gotham-Italic";
+  src: local("Gotham-Italic"), url("fonts/Gotham/Gotham-MediumItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Gotham-Bold";
+  src: local("Gotham-Bold"), url("fonts/Gotham/Gotham-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: bold; }
+
+@font-face {
+  font-family: "Gotham-Round";
+  src: local("Gotham-Round"), url("fonts/Gotham/gothamrnd-light-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #fff;
-  background-color: #fff; }
+  background: white;
+  background-color: white; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: "Gotham-Round", sans-serif;
   font-size: 36px;
-  font-weight: normal;
-  color: #000; }
+  font-weight: 300;
+  color: #53555C; }
 
 ::selection {
-  color: #fff;
+  color: white;
   background: rgba(0, 0, 0, 0.99);
   text-shadow: none; }
+
+.blue {color:#00A9B4;}
+.green {color: #92BB44;}
+.orange {color: #EDAB23;}
+.left {float: left;}
+.right {float: right;}
 
 .reveal .slides > section,
 .reveal .slides > section > section {
@@ -40,11 +69,11 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #000;
-  font-family: "News Cycle", Impact, sans-serif;
-  font-weight: normal;
-  line-height: 1.2;
-  letter-spacing: normal;
+  color: #f05b62;
+  font-family: "Gotham-Round", Impact, sans-serif;
+  font-weight: 300;
+  line-height: 0.9em;
+  letter-spacing: 0.02em;
   text-transform: none;
   text-shadow: none;
   word-wrap: break-word; }
@@ -63,6 +92,9 @@ body {
 
 .reveal h1 {
   text-shadow: none; }
+
+.reveal section[data-background="#f05b62"] h2, .reveal section[data-background="#f05b62"] h1 {color: #fafafa;}
+.reveal h1 {margin: 0 0 30px;}
 
 /*********************************************
  * OTHER
@@ -203,14 +235,14 @@ body {
 /*********************************************
  * LINKS
  *********************************************/
-.reveal a {
-  color: #00008B;
+.reveal a:not(.image) {
+  color:  #f05b62;
   text-decoration: none;
   -webkit-transition: color 0.15s ease;
   -moz-transition: color 0.15s ease;
   transition: color 0.15s ease; }
 
-.reveal a:hover {
+.reveal a:not(.image):hover {
   color: #0000f1;
   text-shadow: none;
   border: none; }
@@ -225,8 +257,8 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+  border: 6px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
 
 .reveal section img.plain {
   border: 0;
@@ -239,7 +271,7 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #00008B;
+  border-color:  #f05b62;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -247,31 +279,31 @@ body {
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #00008B; }
+  border-right-color: #f05b62; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #00008B; }
+  border-left-color: #f05b62; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #00008B; }
+  border-bottom-color: #f05b62; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #00008B; }
+  border-top-color: #f05b62; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #0000f1; }
+  border-right-color: #53555C; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #0000f1; }
+  border-left-color: #53555C; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #0000f1; }
+  border-bottom-color: #53555C; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #0000f1; }
+  border-top-color: #53555C; }
 
 /*********************************************
  * PROGRESS BAR
@@ -280,7 +312,31 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #00008B;
+  background:  #f05b62;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+
+  .reveal footer{
+    position: fixed;
+    height: 26px;
+    width: 100%;
+    bottom: 3px;
+    left: 0;
+    z-index: 10;
+    font-size: 35%;
+    text-align:left;
+    background-image: url(../img/pink-logo.png);
+    background-repeat: no-repeat;
+    background-size: auto 74%;
+    background-position: 7px 0;
+    font-family:;
+}
+.reveal footer .copyright{
+    margin:7px 9px 0 110px;
+}
+.reveal footer .copyright a img{
+    vertical-align: middle;
+}
+.reveal footer span {color: #f05b62;}
