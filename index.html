@@ -72,7 +72,7 @@
             <ul>
               <li class="fragment">What is programming?</li>
               <li class="fragment">Why Ruby?</li>
-              <li class="fragment">Variables, Arithmetic &amp; Objects</li>
+              <li class="fragment">Variables, Arithmetic &amp; Data Types</li>
               <li class="fragment">Methods and Error Messages</li>
               <li class="fragment"><abbr title="Read-Evaluate-Print-Loop">REPLs</abbr> and Installing Ruby</li>
             </ul>
@@ -422,149 +422,206 @@ name
         </section>
       </section>
 
-      <!-- Data Types - 10 min -->
+        <!-- Data Types - 10 min -->
       <section>
         <section>
           <h2>Data Types</h2>
-          <p class="fragment">Numbers &nbsp; | &nbsp; Strings &nbsp; | &nbsp; Symbols &nbsp; | &nbsp; Booleans<br/>Regular Expressions &nbsp; | &nbsp; Arrays &nbsp; | &nbsp; Ranges &nbsp; | &nbsp; Hashes</p>
+          <p class="fragment">Built-in: Numbers, Strings, Symbols, Booleans, Regular Expressions, Arrays, Ranges & Hashes</p>
           <ul>
             <li class="fragment">Data always has a "type"</li>
             <li class="fragment">You will hear the words Class/Type/Object used interchangeably</li>
             <li class="fragment">Let's explore a few built in Objects</li>
           </ul>
-          <pre class="fragment"><code contenteditable class="ruby">
-          irb> 1.class
-          => Fixnum
-
-          irb> "Hello".class
-          => String
-
-          irb> 1.0022.class
-          => Float
-
-          irb> [1,2,3].class
-          => Array
+          <pre><code contenteditable class="ruby fragment">
+irb> 1.class
+=> Fixnum
+irb> "Hello".class
+=> String
+irb> 1.0022.class
+=> Float
+irb> [1,2,3].class
+=> Array
           </code></pre>
         </section>
-
-        <section>
-          <h3>Numbers</h3>
-          <p class="">Numeric data comes in two types: <strong>Integers</strong> and <strong>Floats</strong></p>
-          <div  class="fragment">
-          <p class="">Integers are either <strong>Fixnum</strong> or <strong>Bignum</strong>. They do not have decimals.</p>
-          <pre style="height: 120px; overflow:hidden;"><code contenteditable class="ruby">
-            irb> 1_000_000_000_000_000_000.class
-              => Fixnum
-            irb> 1_000_000_000_000_000_000_000.class
-              => Bignum
-          </code></pre>
-          </div>
-          <div class="fragment">
-          <p class="">Floats have at least one number to the left of a decimal point.</p>
-          <pre style="height: 120px; overflow:hidden;" class=""><code contenteditable class="ruby ">
-            irb> 1.001.class
-              => Float
-          </code></pre>
-          </div>
-        </section>
-
-        <section>
-          <h3>Number Practice</h3>
-          <pre><code contenteditable class="ruby">
-          7/8
-          7.0/8.0
-          3.14.to_s
-          3.14.to_i
-          1 + "2"
-          1 + "2".to_i
-          (1 + 2) * 3
-          1 + (2 * 3)
-          </code></pre>
-          <p>How many seconds are in an hour?</p>
-          <p>How many minutes are in a week?</p>
-          <p>How many years old are you if you've been alive 1 million seconds?</p>
-        </section>
-
         <section>
           <h3>Strings</h3>
-          <p class="">Strings are characters inside double or single quotes.</p>
-          <pre class="fragment"><code contenteditable class="ruby">
-          a = 'Hello '
-          b = "World"
-          c = a + b
-          c.reverse
-          => "dlroW olleH"
+          <p>Strings are characters inside double or single quotes.</p>
+          <pre><code contenteditable class="ruby fragment">
+a = 'Hello '
+b = "World"
+c = a + b
+c.reverse
+=> "dlroW olleH"
           </code></pre>
-          <pre class="fragment"><code contenteditable class="ruby ">
-          a = "Spam "
-
-          # Here multiplying a by 4 concatenates (links) four strings together
-          b = a * 4
-          =>"Spam Spam Spam Spam "
+          <pre><code contenteditable class="ruby fragment">
+a = "Spam "
+b = a * 4
+# Here multiplying a "Spam " by 4 concatenates (links) four strings
+=>"Spam Spam Spam Spam "
+together
           </code></pre>
         </section>
-
         <section>
           <h3>String Practice</h3>
           <pre><code contenteditable class="ruby">
-          "Heather".upcase
-          "Heather".downcase
-          "heather".capitalize
-          "Hello".reverse
-          "Heather".length
-          "Heather Moore".swapcase
-          "".empty?
+"Ryan".upcase
+"Ryan".downcase
+"ryan".capitalize
+"Hello".reverse
+"Ryan".length
+"Ryan Dlugosz".swapcase
+"".empty?
           </code></pre>
           <p>What is the reverse of your name?</p>
           <p>How many characters long is your name?</p>
           <p>Can you repeat the word hello 100 times?</p>
           <p>What is the 5th character of my name?</p>
         </section>
+        <section>
+          <h3>Numbers</h3>
+          <p>Numeric data comes in two types: <strong>Integers</strong> and <strong>Floats</strong></p>
+          <p>Integers are either <strong>Fixnum</strong> or <strong>Bignum</strong>. They do not have decimals.</p>
+          <pre><code contenteditable class="ruby fragment">
+irb> 1_000_000_000_000_000_000.class
+  => Fixnum
+irb> 1_000_000_000_000_000_000_000.class
+  => Bignum
+          </code></pre>
+          <p>Floats are numbers with at least one number to the left of a decimal point.</p>
+          <pre><code contenteditable class="ruby fragment">
+            irb> 1.001.class
+              => Float
+          </code></pre>
+        </section>
+        <section>
+          <h3>Number Practice</h3>
+          <pre><code contenteditable class="ruby">
+7/8
+7.0/8.0
+3.14.to_s
+3.14.to_i
+1 + "2"
+1 + "2".to_i
+(1 + 2) * 3
+1 + (2 * 3)
+          </code></pre>
+          <p>How many seconds are in an hour?</p>
+          <p>How many minutes are in a week?</p>
+          <p>How many years old are you if you've been alive 1 million seconds?</p>
+        </section>
+        <section>
+          <h3>Symbols</h3>
+          <p class="fragment">You can think of symbols as lightweight Strings.</p>
+          <p class="fragment">It's good to know these exist, but don't think about them too much for now.</p>
+          <pre><code contenteditable class="ruby fragment">
+# transient and mutable
+"hello"
 
-      <!-- Methods -->
+# permanent and immutable
+:hello
+          </code></pre>
+        </section>
+        <section>
+          <h3>Booleans</h3>
+          <p class="fragment">This is another Object that we will learn about later.</p>
+          <p class="fragment">For now, when you hear Boolean, think TRUE and FALSE.</p>
+          <pre><code contenteditable class="ruby fragment">
+# NOT true
+!true
+=> false
 
+# NOT false
+!false
+=> true
+          </code></pre>
+        </section>
+        <section>
+          <h3>Arrays, Ranges & Hashes</h3>
+          <p>We will also leave these data types for the next class</p>
+          <p class="fragment">Examples of what they will look like:</p>
+          <pre><code contenteditable class="ruby fragment">
+# Arrays are used to hold sets of data.
+irb> array_of_numbers = [1,2,3]
+irb> array_of_numbers.first
+=> 1
+
+# Ranges are used to express a sequence.
+irb> range_of_numbers = (1..5)
+irb> range_of_numbers.include?(4)
+=> true
+
+# Hashes are like dictionaries. You can look up a value by a key.
+irb> hash_of_key_to_value =
+  {
+    "Apple" => "A fruit.",
+    "Cucumber" => "A vegetable."
+  }
+          </code></pre>
+        </section>
         <section>
           <h3>Methods</h3>
           <ul>
             <li class="fragment">Methods define the behavior for an Object.</li>
-            <li class="fragment">The "." is an operator that connects the Object of the method to the method.</li>
             <li class="fragment">String Objects can <strong>reverse</strong>, for example.</li>
+            <li class="fragment">Some methods are accessed using our friend 'dot' and some are standalone.</li>
             <li class="fragment">Let's call some methods</li>
           </ul>
-          <pre class="fragment"><code contenteditable class="ruby">
-          irb> puts "hello"
-          hello
-          => nil
-
-          irb> "2".to_i
-          => 2
-
-          irb> 2.to_s
-          => "2"
-
-          irb> "2" / 5
-          NoMethodError: undefined method `/' for "2":String
-            </code></pre>
+          <pre>
+            <code contenteditable class="ruby fragment">
+irb> puts "hello"
+hello
+=> nil
+irb> "2".to_i
+=> 2
+irb> 2.to_s
+=> "2"
+irb> "2" / 5
+NoMethodError: undefined method `/' for "2":String
+            </code>
+          </pre>
         </section>
         <section>
           <h3>User Input</h3>
           <ul>
-            <li class="fragment">To obtain user input, use <code>gets</code></li>
-            <li class="fragment">To print out information, use <code>puts</code></li>
+            <li class="fragment">To obtain user input, use `gets`</li>
+            <li class="fragment">To print out information, use `puts`</li>
             <li class="fragment">Let's create our first program together</li>
           </ul>
-          <div class="fragment"><p>Put the code below in a file and save it as name.rb</p>
-                      <pre style="height: 120px; overflow:hidden;"><code contenteditable class=" ruby">
-                      puts 'Hello there, and what\'s your name?'
-                      name = gets
-                      puts 'Your name is ' + name.chomp! + '? What a lovely name!'
-                      puts 'Pleased to meet you, ' + name + '. :)'
-                      </code></pre></div>
-          <div class="fragment"><p>Run your program from the command line:</p>
-                      <pre style="height: 80px; overflow:hidden"><code>
-                        ruby name.rb
-                      </code></pre></div>
+          </br>
+          </br>
+          <p class="fragment">Put the code below in a file and save it as name.rb</p>
+          <pre><code contenteditable class="fragment ruby">
+puts 'Hello there, and what\'s your name?'
+name = gets
+puts 'Your name is ' + name.chomp! + '? What a lovely name!'
+puts 'Pleased to meet you, ' + name + '. :)'
+          </code></pre>
+          <p class="fragment">Run your program from the command line:</p>
+          <pre><code class="fragment">
+        ruby name.rb
+          </code></pre>
         </section>
+        <section>
+          <h3>Let's Develop It</h3>
+          <ul>
+            <li>Write your own program using 'puts' and 'gets' to ask a user for their age and then tell them how old they are in dog years.</li>
+            <li>reminder: 'gets' method returns a string. To do math on it, convert it to an integer with .to_i method.</li>
+            <pre><code class="ruby">
+            #1 dog year = 7 human years
+            user_age = gets.to_i
+            </code></pre>
+          </ul>
+        </section>
+        <section>
+          <h3>Lab 1</h3>
+          <ul>
+            <li>Update your code to return a message in all capital letters.</li>
+          </ul>
+          <pre><code class="ruby">
+# YOU ARE 5 YEARS OLD IN DOG YEARS
+          </code></pre>
+        </section>
+
       </section>
 
       <section>
