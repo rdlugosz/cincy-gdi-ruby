@@ -266,117 +266,123 @@ Hello World!
         <section>
           <section>
             <h3>Arithmetic</h3>
-            <p class="box">Try out some calculator functions</p>
-            <pre><code contenteditable data-noescape class="ruby">
-                3 + 4
-
-                2 * 4
-
-                6 - 2
-
-                4 / 2
-  <span class="fragment">
-                4 /* 2
-  </span><span class="fragment">
-                =&gt; SyntaxError: (irb):10:syntax error, unexpected *</span>
-              </code></pre>
+            <p class="fragment">Try out some calculator functions</p>
+            <pre class="fragment">
+              <code contenteditable class="ruby">
+3 + 4
+2 * 4
+6 - 2
+4 / 2
+4 /* 2
+=&gt; SyntaxError: (irb):10:syntax error, unexpected *
+              </code>
+            </pre>
           </section>
 
           <section>
             <h3>Arithmetic</h3>
-            <p class="box">Other Ruby Math Operators</p>
-            <pre><code contenteditable class="ruby">
-                11 % 5
-                =&gt; 1
+            <p class="fragment">Other Ruby Math Operators</p>
+            <pre class="fragment"><code contenteditable class="ruby">
+# Modulo operator (returns the remainder)
+11 % 5
+=&gt; 1
 
-                2 ** 3
-                =&gt; 8
-
+# Exponent operator (2 raised to the power of 3)
+2 ** 3
+=&gt; 8
               </code></pre>
           </section>
         </section>
 
         <section>
           <h3>Errors are Neat!</h3>
-          <ul class="list--tall box--small copy--small">
+          <ul>
             <li class="fragment">There are different kinds of errors that can occur. We just saw the <strong>SyntaxError</strong> which often
               helps us find misspelled words or missing quotes.
             </li>
-            <li class="fragment box">Take time to read each Error. They often tell you how to fix the issue and can be a great
+            <li class="fragment ">Take time to read each Error. They often tell you how to fix the issue and can be a great
               starting point when searching for help online.
             </li>
           </ul>
 <pre class="fragment"><code contenteditable class="ruby">
-irb> hi
+irb&gt; hi
 NameError: undefined local variable or method `hi' for main:Object
-  </code></pre>
+</code></pre>
         </section>
 
       <!-- Variables - 10 min -->
       <section>
         <section>
           <h3>Variables</h3>
-          <ul class="list--tall box--small copy--small">
+          <ul>
             <li class="fragment">Variables are references to information.</li>
             <li class="fragment">We reference variables by name.</li>
             <li class="fragment">They are called variables because the<br/>information they reference may change.</li>
           </ul>
 <pre class="fragment"><code contenteditable class="ruby">
-  # Everything after this pound sign will not be evaluated.
-  # These are called comments and I will use them to annotate code
-  age = 50
-  days_in_year = 365
-  days_alive = age * days_in_year
-  => 18250
+# Everything after the pound sign will not be evaluated.
+# These are called comments and I will use them to annotate code
+age = 50
+days_in_year = 365
+days_alive = age * days_in_year
+=&gt; 18250
 </code></pre>
         </section>
 
         <section>
-          <h3>Ruby's Variables and Constants</h3>
-          <ul class="list--tall box--small copy--small">
+          <h3>Variables, Constants, Symbols</h3>
+          <ul>
             <li class="fragment">Ruby has variables, constants and literals.</li>
-            <li class="fragment">A variables starts with a lower case letter or an underscore character (_) and consists entirely of letters, numbers and underscores.</li>
-            <li class="fragment">Constants do not change and are typically in all caps.</li>
-            <li class="fragment">Literals are literal values, for example the number 3 or the string 'hi'</li>
+            <li class="fragment">A variable starts with a lower case letter and multiple words are separated with an underscore character (_), <code>like_this</code>.</li>
+            <li class="fragment">Constants do not change and are typically written in all caps.</li>
+            <li class="fragment">A <code>symbol</code> is a shorthand for a constant string.</li>
+            <li class="fragment">Literals are literal values, for example the number 3 or the string 'hi'.</li>
           </ul>
 
           <pre class="fragment"><code contenteditable class="ruby">
-          # variables
-          age = 50
-          _age = 50
-          _my_age = 50
+# variables
+age = 37
+instructor_name = "Ryan Dlugosz"
 
-          # constants
-          PI = 3.14159
+# constants
+BEST_FOOD = "Sushi"
+PI = 3.14159
 
-          # literals
-          3
-          'hi'
+# symbols
+:pizza
+:ice_cream
+
+# literals
+3
+'hi'
           </code></pre>
         </section>
 
         <section>
           <h3>What can I do with a Variable?</h3>
-          <ul class="list--tall box--small copy--small">
+          <ul>
             <li class="fragment">Create - Initialize - Define</li>
             <li class="fragment">Access - Read</li>
             <li class="fragment">Assign - Replace</li>
           </ul>
           <pre class="fragment"><code contenteditable class="ruby ">
-          # create and assign in one line
-          age = 0
+# create and assign in one line
+age = 0
 
-          # access the value in age
-          age
+# access the value in age
+age
 
-          # replace value in age
-          age = 40
+# replace value in age
+age = 40
+
+# use it in a statement
+age + 10        # => 50
           </code></pre>
         </section>
 
         <section>
           <h3>Variable naming</h3>
-          <ul class="list--tall box--small copy--small">
+          <ul>
             <li class="fragment">Make it meaningful</li>
             <li class="fragment">Make it easy to read</li>
             <li class="fragment">Make it concise</li>
@@ -384,30 +390,34 @@ NameError: undefined local variable or method `hi' for main:Object
             <li class="fragment">Should be understood by someone who has no idea what your program does</li>
           </ul>
           <pre class="fragment"><code contenteditable class="ruby ">
-          # good
-          occupation = "software developer"
+# good
+occupation = "software developer"
 
-          # bad
-          occupation_i_always_dreamed_of_having_in_seattle = "software developer"
-          o = "software developer"
-          1st_occupation = "software developer"
+<span class="fragement">
+# bad
+occupation_i_always_dreamed_of_having_in_cincy = "software developer"
+o = "software developer"
+1st_occupation = "software developer"
+</span>
           </code></pre>
         </section>
 
         <section>
           <h3>Local Variable Values</h3>
-          <ul class="list--tall box--small copy--small">
+          <ul>
             <li class="fragment">No default value</li>
             <li class="fragment">No type declaration</li>
             <li class="fragment">Do not live forever</li>
           </ul>
           <pre class="fragment"><code contenteditable class="ruby">
-          # error
-          name
+# error
+name
 
-          # defined, initalize, create
-          name = "KC"
-          defined?(name)
+<span class="fragment">
+  # defined, initialize, create
+  name = "KC"
+  defined?(name)      # => true
+</span>
           </code></pre>
         </section>
       </section>
@@ -417,7 +427,7 @@ NameError: undefined local variable or method `hi' for main:Object
         <section>
           <h2>Data Types</h2>
           <p class="fragment">Numbers &nbsp; | &nbsp; Strings &nbsp; | &nbsp; Symbols &nbsp; | &nbsp; Booleans<br/>Regular Expressions &nbsp; | &nbsp; Arrays &nbsp; | &nbsp; Ranges &nbsp; | &nbsp; Hashes</p>
-          <ul class="list--tall box--small copy--small">
+          <ul>
             <li class="fragment">Data always has a "type"</li>
             <li class="fragment">You will hear the words Class/Type/Object used interchangeably</li>
             <li class="fragment">Let's explore a few built in Objects</li>
@@ -439,9 +449,9 @@ NameError: undefined local variable or method `hi' for main:Object
 
         <section>
           <h3>Numbers</h3>
-          <p class="box">Numeric data comes in two types: <strong>Integers</strong> and <strong>Floats</strong></p>
+          <p class="">Numeric data comes in two types: <strong>Integers</strong> and <strong>Floats</strong></p>
           <div  class="fragment">
-          <p class="copy--small">Integers are either <strong>Fixnum</strong> or <strong>Bignum</strong>. They do not have decimals.</p>
+          <p class="">Integers are either <strong>Fixnum</strong> or <strong>Bignum</strong>. They do not have decimals.</p>
           <pre style="height: 120px; overflow:hidden;"><code contenteditable class="ruby">
             irb> 1_000_000_000_000_000_000.class
               => Fixnum
@@ -449,8 +459,8 @@ NameError: undefined local variable or method `hi' for main:Object
               => Bignum
           </code></pre>
           </div>
-          <div class="box--small fragment">
-          <p class="copy--small">Floats have at least one number to the left of a decimal point.</p>
+          <div class="fragment">
+          <p class="">Floats have at least one number to the left of a decimal point.</p>
           <pre style="height: 120px; overflow:hidden;" class=""><code contenteditable class="ruby ">
             irb> 1.001.class
               => Float
@@ -477,7 +487,7 @@ NameError: undefined local variable or method `hi' for main:Object
 
         <section>
           <h3>Strings</h3>
-          <p class="box--small copy--small">Strings are characters inside double or single quotes.</p>
+          <p class="">Strings are characters inside double or single quotes.</p>
           <pre class="fragment"><code contenteditable class="ruby">
           a = 'Hello '
           b = "World"
@@ -515,7 +525,7 @@ NameError: undefined local variable or method `hi' for main:Object
 
         <section>
           <h3>Methods</h3>
-          <ul class="list--tall box--small copy--small">
+          <ul>
             <li class="fragment">Methods define the behavior for an Object.</li>
             <li class="fragment">The "." is an operator that connects the Object of the method to the method.</li>
             <li class="fragment">String Objects can <strong>reverse</strong>, for example.</li>
@@ -538,7 +548,7 @@ NameError: undefined local variable or method `hi' for main:Object
         </section>
         <section>
           <h3>User Input</h3>
-          <ul class="box--small list--tall copy--small">
+          <ul>
             <li class="fragment">To obtain user input, use <code>gets</code></li>
             <li class="fragment">To print out information, use <code>puts</code></li>
             <li class="fragment">Let's create our first program together</li>
