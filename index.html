@@ -74,6 +74,7 @@
               <li class="fragment">Why Ruby?</li>
               <li class="fragment">Variables, Arithmetic &amp; Objects</li>
               <li class="fragment">Methods and Error Messages</li>
+              <li class="fragment"><abbr title="Read-Evaluate-Print-Loop">REPLs</abbr> and Installing Ruby</li>
             </ul>
           </section>
           <section>
@@ -478,65 +479,6 @@ Hello World!
           <p>What is the 5th character of my name?</p>
         </section>
 
-
-
-        <!--section>
-          <h3>Symbols</h3>
-          <p class="box--small copy--small fragment">You can think of symbols as lightweight Strings.</p>
-          <p class="box--small copy--small fragment">It's good to know these exist, but don't<br/>worry about them too much for now.</p>
-          <pre class="fragment"><code contenteditable class="ruby">
-          # transient and mutable
-          "hello"
-
-          # permanent and immutable
-          :hello
-          </code></pre>
-        </section-->
-
-        <!--section>
-          <h3>Booleans</h3>
-          <p class="box--small copy--small fragment">This is another Object that we will learn about later.</p>
-          <p class="box--small copy--small fragment">When you hear Boolean, think TRUE and FALSE.</p>
-          <pre class="fragment"><code contenteditable class="ruby">
-          # NOT true
-          !true
-          => false
-
-          not(true)
-          => false
-
-
-          # NOT false
-          !false
-          => true
-          </code></pre>
-        </section-->
-
-        <!--section>
-          <h3>Arrays, Ranges &amp; Hashes</h3>
-          <p class="box--small copy--small fragment">We will also leave these data types for the next class</p>
-          <p class="box--small copy--small fragment">Examples of what they will look like:</p>
-          <pre class="fragment"><code contenteditable class="ruby">
-          # Arrays are used to hold sets of data.
-          irb> array_of_numbers = [1,2,3]
-          irb> array_of_numbers.first
-          => 1
-
-          # Ranges are used to express a sequence.
-          irb> range_of_numbers = (1..5)
-          irb> range_of_numbers.include?(4)
-          => true
-
-          # Hashes are like dictionaries. You can look up a value by a key.
-          irb> hash_of_key_to_value =
-            {
-              "Apple" => "A fruit.",
-              "Cucumber" => "A vegetable."
-            }
-          </code></pre>
-        </section>
-      </section-->
-
       <!-- Methods -->
 
         <section>
@@ -582,6 +524,146 @@ Hello World!
                       </code></pre></div>
         </section>
       </section>
+
+      <section>
+        <section>
+          <h1>Installing Ruby</h1>
+          <h3>(supplemental)</h3>
+          <p>The following slides are included for reference, but are not required steps for completing this Intro to Ruby class. If you have any trouble, please ask me for help in the GDI Slack channel.</p>
+        </section>
+
+        <section>
+          <h2>Using a Mac?</h2>
+          <p>If you happen to be using a Mac, Ruby is already installed on your computer!</p>
+
+          <h2>Using a Windows PC?</h2>
+          <p>Download and run the <a href="http://railsinstaller.org/">Rails Installer for Windows (Ruby 2.2 version)</a>.</p>
+
+        </section>
+        <section>
+          <h3>RailsBridge Installfest</h3>
+          <p>The RailsBridge organization maintains a great resource for installing Ruby on your computer. <a href="http://docs.railsbridge.org/installfest/" alt="railsbridge installfest">Check it out!</a></p>
+          <p>These instructions could be helpful if you run into trouble.</p>
+          <p class="green">http://docs.railsbridge.org/installfest/</p>
+          <p>Just work through the instructions for your operating system. For our class, you'll only need to advance through the first steps, but you're welcome to advance further if you're curious or plan to write a Rails applications.</p>
+        </section>
+
+        <!-- Part 2: Intro to Terminal, 20 minutes -->
+        <section>
+          <h3>Intro to Terminal</h3>
+          <p>Working in the terminal can be really intimidating at first!</p>
+          <p>With practice, navigation and file manipulation is significantly faster in the terminal than in the GUI.</p>
+          <p>Professional software developers use the terminal all the time, and this class will require some use of it.</p>
+        </section>
+
+        <section>
+          <h3>Intro to Terminal</h3>
+          <p>Mac & Linux users: Open <strong>Terminal</strong></p>
+          <p>Windows users: Open <strong>Git-Bash</strong></p>
+          <br >
+          <p>We will not be using Windows "cmd" program, as it uses a different syntax than *NIX systems.</p>
+        </section>
+
+        <section>
+          <h3>Intro to Terminal Prompt</h3>
+          <p>The line that appears in the terminal when you open it is called the prompt. It usually contains information about the user and current directory. It can be customized.</p>
+          <img src="images/prompt1.png" alt="example prompt">
+          <img src="images/prompt2.png" alt="example prompt">
+          <img src="images/prompt3.png" alt="example prompt">
+          <img src="images/prompt4.png" alt="example prompt">
+          <img src="images/prompt5.png" alt="example prompt">
+          <p>Terminal instructions often start a line with a $. This represents the last character in the prompt, you don't have to type it.</p>
+        </section>
+
+        <section>
+          <h3>Terminal Cheatsheet</h3>
+          <table style="font-size: 20px; line-height: 1.4em;">
+            <tr>
+              <td><code>.</code></td>
+              <td>the current directory- ex: "touch ./wow.txt"</td>
+            </tr>
+            <tr>
+              <td><code>..</code></td>
+              <td>the parent of current directory - ex: "cd ../RubyParty"</td>
+            </tr>
+            <tr>
+              <td><code>~</code></td>
+              <td>the root directory- ex: "cd ~/Pictures"</td>
+            </tr>
+            <tr>
+              <td><code>cd [location]</code></td>
+              <td>"change directory" to [location]</td>
+            </tr>
+            <tr>
+              <td><code>pwd</code></td>
+              <td>"present working directory" - where am I?</td>
+            </tr>
+            <tr>
+              <td><code>ls -al</code></td>
+              <td>"list all" of the contents of current directory, including invisible ones</td>
+            </tr>
+            <tr>
+              <td><code>touch [filename.extension]</code></td>
+              <td>create a file called filename.extension in the current directory</td>
+            </tr>
+            <tr>
+              <td><code>mkdir [directoryname]</code></td>
+              <td>create a directory called directoryname in the current directory</td>
+            </tr>
+            <tr>
+              <td><code>rm [filename]</code></td>
+              <td>"remove" (delete) the file called filename</td>
+            </tr>
+            <tr>
+              <td><code>rm -rf [directoryname]</code></td>
+              <td>"remove recursively with force" the directory called directoryname</td>
+            </tr>
+            <tr>
+              <td><code>clear OR cmd+k</code></td>
+              <td>clear the terminal screen</td>
+            </tr>
+            <tr>
+              <td><code>help</code></td>
+              <td>lists all possible commands</td>
+            </tr>
+            <tr>
+              <td><code>man [command]</code></td>
+              <td>displays the manual for command</td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h3>Terminal Activities</h3>
+          <pre><code class="terminal">
+  # navigate to your desktop
+  cd ~/Desktop    #Linux, Mac
+  cd desktop      #Windows
+
+  # make a directory called ruby_adventures
+  mkdir ruby_adventures
+
+  # navigate into new directory
+  cd ruby_adventures
+
+  # create a file
+  touch class0.rb
+
+  # list the contents of the directory
+  ls
+            </code></pre>
+        </section>
+
+        <section>
+          <h3>Terminal Activities</h3>
+          <pre><code class="terminal">
+    man ls
+            </code></pre>
+          <p>Output:</p>
+          <img src="images/manls.png" >
+        </section>
+      </section>
+
 
 
       <section>
@@ -634,7 +716,7 @@ Hello World!
       </div> <!-- END OF SLIDES!!!1 -->
       <footer>
         <div class="copyright">
-          Intro to Ruby &ndash; Ryan Dlugosz
+          Intro to Ruby &ndash; Ryan Dlugosz &ndash; gdi-ruby.backcovesoftware.com
           <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" width="50px" /></a>
         </div>
       </footer>
