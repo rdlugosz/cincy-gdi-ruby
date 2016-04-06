@@ -72,7 +72,7 @@
             <ul>
               <li class="fragment">What is programming?</li>
               <li class="fragment">Why Ruby?</li>
-              <li class="fragment">Variables, Arithmetic &amp; Data Types</li>
+              <li class="fragment">Write real Ruby code!</li>
               <!-- <li class="fragment">Methods and Error Messages</li> -->
               <!-- <li class="fragment"><abbr title="Read-Evaluate-Print-Loop">REPLs</abbr> and Installing Ruby</li> -->
             </ul>
@@ -82,8 +82,10 @@
             <ul>
               <li class="fragment">Ryan Dlugosz <span class="fragment">(duh-LOO-gus... <span class="fragment">it's Polish</span>)</span></li>
               <li class="fragment">Independent Consultant, Ruby (mostly)</li>
+              <br>
               <li class="fragment"><a href="mailto:ryan@dlugosz.net">ryan@dlugosz.net</a></li>
-              <li class="fragment">GDI Slack: @ryandlugosz / #intro-to-ruby</li>
+              <li class="fragment"><a href="http://slack.gdicincy.com" target="_blank">GDI Slack</a>: @ryandlugosz / #intro-to-ruby</li>
+              <li class="fragment"><a href="https://www.linkedin.com/in/rdlugosz" target="_blank">LinkedIn</a></li>
             </ul>
             <img data-src="images/amelia-coding.gif" alt="" class="fragment">
           </section>
@@ -102,30 +104,10 @@
             </aside>
           </section>
 
-          <section>
-            <h4>Greeter Code</h4>
-<pre><code data-trim data-noescape>
-<span class="fragment">
-puts "Hi, welcome to Intro to Ruby! What is everyone's name?"
-</span>
-<span class="fragment">while name = get_input_from_user</span>
-<span class="fragment">  break if name.empty?</span>
-<span class="fragment">  student_names &lt;&lt; name.capitalize</span>
-<span class="fragment">end</span>
-<span class="fragment">
-student_names.each do |student_name|</span>
-<span class="fragment">  puts "Hi #{student_name}, it is #{random_adverb.upcase} to meet you!"</span>
-<span class="fragment">end</span>
-<span class="fragment">
-def random_adverb
-  ["nice", "great", "wonderful"].shuffle.first
-end
-</span>
-</code></pre>
-          </section>
+
 
           <section>
-            <h3>What can you expect from this class</h3>
+            <h3>What you expect from this class</h3>
             <ul>
               <li class="fragment">Learn a bit about Ruby Programming</li>
               <li class="fragment">Meet people who are learning with you</li>
@@ -135,6 +117,8 @@ end
             <ul>
               <li class="fragment">Get a feel for whether programming is right for you!</li>
             </ul>
+
+            <p class="fragment"><em>(how will I know?)</em></p>
             <aside class="notes">
               You won't walk out of here as a ready-to-hire Ruby programmer.
               That's not how programming works. Learning to program is more
@@ -186,12 +170,30 @@ end
 
           <section>
             <h1>Why Ruby?</h1>
-            <h3 class="fragment">Ruby is a Powerful language that reads like English!</h3>
-            <h3 class="fragment">Designed for Programmer Happiness!</h3>
+            <h4 class="fragment">Ruby is a Powerful language that reads like English!</h4>
+            <h4 class="fragment">Designed for Programmer Happiness!</h4>
             <h4 class="fragment">Welcoming, friendly community!</h4>
 
 <pre class="fragment"><code data-trim data-noescape>&gt; <span class="fragment">Ruby.easy_to_learn? <span class="fragment">and</span> <span class="fragment">Ruby.fun_to_use?</span></span>
 <span class="fragment">=&gt; true</span></code></pre>
+          </section>
+
+          <section>
+            <h1>Ruby on Rails</h1>
+            <ul>
+              <li class="fragment">Web framework for Ruby</li>
+              <li class="fragment">Some companies you may have heard of:</li>
+              <ul>
+                <li class="fragment">Hulu</li>
+                <li class="fragment">Groupon</li>
+                <li class="fragment">Airbnb</li>
+                <li class="fragment">Square</li>
+                <li class="fragment">Kickstarter</li>
+                <li class="fragment">Github</li>
+                <li class="fragment">Shopify</li>
+                <li class="fragment">(&hellip;and more!)</li>
+              </ul>
+            </ul>
           </section>
 
 
@@ -235,7 +237,32 @@ Hello World!
 </code></pre>
 
 
-            <h3 class="fragment">Cool, huh?</h3>
+          </section>
+
+          <section>
+            <h4>Let's look at the <code>Greeter</code> Code</h4>
+<pre><code data-trim data-noescape>
+<span class="fragment">
+puts "Hi, welcome to Intro to Ruby! What is everyone's name?"
+</span>
+<span class="fragment">while name = get_input_from_user</span>
+<span class="fragment">  break if name.empty?</span>
+<span class="fragment">  student_names &lt;&lt; name.capitalize</span>
+<span class="fragment">end</span>
+<span class="fragment">
+student_names.each do |student_name|</span>
+<span class="fragment">  puts "Hi #{student_name}, it is #{random_adverb.upcase} to meet you!"</span>
+<span class="fragment">end</span>
+<span class="fragment">
+def random_adverb
+  ["nice", "great", "wonderful"].shuffle.first
+end
+</span>
+</code></pre>
+          </section>
+
+          <section>
+            <h2>Cool, huh?</h2>
             <p class="fragment">Let's start coding for real!</p>
           </section>
 
@@ -243,21 +270,22 @@ Hello World!
 
 
         <section>
-          <a href="http://tryruby.backcovesoftware.com" target="_blank"><img data-src="/images/try-ruby.png"></a>
+          <a href="http://tryruby.backcovesoftware.com" target="_blank"><img data-src="/images/try-ruby.png" height="250px"></a>
           <h3><a href="http://tryruby.backcovesoftware.com" target="_blank"><strong>Try Ruby</strong></a></h3>
-          <p>For now, focus on what we're able to accomplish without worrying too much about remembering exactly <em>how</em> we're doing it. <em>That intuition will develop in time!</em></p>
-
-          <aside class="notes">
-            Work together with the class in the Try Ruby environment for the first couple of levels. They will do more of this for homework. We'll see a lot of things we
-          </aside>
+          <ul>
+            <li>For now, focus on what we're able to accomplish without worrying too much about remembering exactly <em>how</em> we're doing it.</li>
+            <li><em>That intuition will develop in time!</em></li>
+          </ul>
         </section>
 
-
+        <section>
+          <h1>BREAK!</h1>
+        </section>
 
         <section>
           <section>
             <h1>Intrigued?</h1>
-            <p class="fragment">Let's talk in more detail about some of the things we learned.</p>
+            <p class="fragment">Let's talk in more detail about some of the things we saw.</p>
           </section>
 
           <section>
