@@ -396,16 +396,18 @@ days_alive = age * days_in_year
         </section>
 
         <section>
-          <h3>Variables, Constants, Symbols</h3>
+          <h3>Variables, Constants, Literals</h3>
           <ul>
             <li class="fragment">Ruby has variables, constants and literals.</li>
             <li class="fragment">A variable starts with a lower case letter and multiple words are separated with an underscore character (_), <code>like_this</code>.</li>
             <li class="fragment">Constants do not change and are typically written in all caps.</li>
-            <li class="fragment">A <code>symbol</code> is a shorthand for a constant string.</li>
             <li class="fragment">Literals are literal values, for example the number 3 or the string 'hi'.</li>
           </ul>
 
-          <pre class="fragment"><code contenteditable class="ruby">
+        </section>
+        <section>
+          <h3>Variables, Constants, Literals</h3>
+          <pre><code contenteditable class="ruby">
 # variables
 age = 37
 instructor_name = "Ryan Dlugosz"
@@ -413,10 +415,6 @@ instructor_name = "Ryan Dlugosz"
 # constants
 BEST_FOOD = "Sushi"
 PI = 3.14159
-
-# symbols
-:pizza
-:ice_cream
 
 # literals
 3
@@ -455,7 +453,7 @@ age + 10        # => 50
             <li class="fragment">Should be unique</li>
             <li class="fragment">Should be understood by someone who has no idea what your program does</li>
           </ul>
-          <pre class="fragment"><code contenteditable class="ruby ">
+          <pre class="fragment"><code contenteditable data-trim data-noescape class="ruby ">
 # good
 occupation = "software developer"
 
@@ -667,26 +665,26 @@ puts 'Pleased to meet you, ' + name + '. :)'
         ruby name.rb
           </code></pre>
         </section>
-        <section>
-          <h3>Let's Develop It</h3>
-          <ul>
-            <li>Write your own program using 'puts' and 'gets' to ask a user for their age and then tell them how old they are in dog years.</li>
-            <li>reminder: 'gets' method returns a string. To do math on it, convert it to an integer with .to_i method.</li>
-            <pre><code class="ruby">
-            #1 dog year = 7 human years
-            user_age = gets.to_i
-            </code></pre>
-          </ul>
-        </section>
-        <section>
-          <h3>Lab 1</h3>
-          <ul>
-            <li>Update your code to return a message in all capital letters.</li>
-          </ul>
-          <pre><code class="ruby">
-# YOU ARE 5 YEARS OLD IN DOG YEARS
-          </code></pre>
-        </section>
+        <!-- <section> -->
+        <!--   <h3>Let's Develop It</h3> -->
+        <!--   <ul> -->
+        <!--     <li>Write your own program using 'puts' and 'gets' to ask a user for their age and then tell them how old they are in dog years.</li> -->
+        <!--     <li>reminder: 'gets' method returns a string. To do math on it, convert it to an integer with .to_i method.</li> -->
+        <!--     <pre><code class="ruby"> -->
+        <!--     #1 dog year = 7 human years -->
+        <!--     user_age = gets.to_i -->
+        <!--     </code></pre> -->
+        <!--   </ul> -->
+        <!-- </section> -->
+        <!-- <section> -->
+        <!--   <h3>Lab 1</h3> -->
+        <!--   <ul> -->
+        <!--     <li>Update your code to return a message in all capital letters.</li> -->
+        <!--   </ul> -->
+        <!--   <pre><code class="ruby"> -->
+<!-- # YOU ARE 5 YEARS OLD IN DOG YEARS -->
+        <!--   </code></pre> -->
+        <!-- </section> -->
 
       </section>
 
@@ -701,8 +699,8 @@ puts 'Pleased to meet you, ' + name + '. :)'
           <ul>
             <li class="fragment">Join <a href="http://slack.gdicincy.com/" target="_blank">GDI Slack</a> &amp; #intro-to-ruby</li>
             <li class="fragment">Complete the <a href="https://code.org/mc" target="hoc">Hour of Code</a></li>
-            <li class="fragment">Explore more of the <a href="http://tryruby.backcovesoftware.com" target="try-ruby">Try Ruby</a> challenges</li>
-            <li class="fragment">Bonus: Chapters 0&ndash;6 of <em><a href="https://pine.fm/LearnToProgram/" target="learn-to-program">Learn to Program</a></em></li>
+            <li class="fragment">Explore remaining <a href="http://tryruby.backcovesoftware.com" target="try-ruby">Try Ruby</a> challenges</li>
+            <li class="fragment">Bonus: Check out (free!) ebook: <em><a href="https://pine.fm/LearnToProgram/" target="learn-to-program">Learn to Program</a></em></li>
             <ul class="fragment">
               <li><em>While you can follow the book's instructions and install Ruby on your computer, you may find it easier to use the online tool <a href="https://repl.it">repl.it</a></em></li>
             </ul>
@@ -717,6 +715,7 @@ puts 'Pleased to meet you, ' + name + '. :)'
             <li>Flow control (<code>if/then/else</code> and friends)</li>
             <li>Arrays and Hashes</li>
             <li>Looping and Enumeration</li>
+            <li>Classes and Objects</li>
           </ul>
         </section>
 
