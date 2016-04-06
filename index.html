@@ -327,8 +327,6 @@ end
 2 * 4
 6 - 2
 4 / 2
-4 /* 2
-=&gt; SyntaxError: (irb):10:syntax error, unexpected *
               </code>
             </pre>
           </section>
@@ -350,11 +348,16 @@ end
 
         <section>
           <h3>Errors are Neat!</h3>
+<pre class="fragment">
+<code contenteditable class="ruby">
+4 /* 2
+=&gt; SyntaxError: (irb):10:syntax error, unexpected *
+</code></pre>
           <ul>
             <li class="fragment">There are different kinds of errors that can occur. We just saw the <strong>SyntaxError</strong> which often
               helps us find misspelled words or missing quotes.
             </li>
-            <li class="fragment ">Take time to read each Error. They often tell you how to fix the issue and can be a great
+            <li class="fragment">Take time to read each Error. They often tell you how to fix the issue and can be a great
               starting point when searching for help online.
             </li>
           </ul>
@@ -362,6 +365,15 @@ end
 irb&gt; hi
 NameError: undefined local variable or method `hi' for main:Object
 </code></pre>
+        </section>
+        <section>
+          <h3>i read it.</h3>
+          <h3 class="fragment">am still confused :(</h3>
+          <h3 class="fragment">now what?</h3>
+          <p class="fragment">Ready for the most important tip you can learn about modern programming?</p>
+
+          <h4 class="fragment"><strong>Paste your error message into Google</strong></h4>
+
         </section>
 
       <!-- Variables - 10 min -->
@@ -480,21 +492,21 @@ name
       <section>
         <section>
           <h2>Data Types</h2>
-          <p class="fragment">Built-in: Numbers, Strings, Symbols, Booleans, Regular Expressions, Arrays, Ranges & Hashes</p>
+          <p class="fragment">Built-in: Numbers, Strings, Symbols, Booleans, Regular Expressions, Arrays, Ranges &amp; Hashes</p>
           <ul>
             <li class="fragment">Data always has a "type"</li>
             <li class="fragment">You will hear the words Class/Type/Object used interchangeably</li>
             <li class="fragment">Let's explore a few built in Objects</li>
           </ul>
           <pre><code contenteditable class="ruby fragment">
-irb> 1.class
-=> Fixnum
-irb> "Hello".class
-=> String
-irb> 1.0022.class
-=> Float
-irb> [1,2,3].class
-=> Array
+irb&gt; 1.class
+=&gt; Fixnum
+irb&gt; "Hello".class
+=&gt; String
+irb&gt; 1.0022.class
+=&gt; Float
+irb&gt; [1,2,3].class
+=&gt; Array
           </code></pre>
         </section>
         <section>
@@ -505,13 +517,13 @@ a = 'Hello '
 b = "World"
 c = a + b
 c.reverse
-=> "dlroW olleH"
+=&gt; "dlroW olleH"
           </code></pre>
           <pre><code contenteditable class="ruby fragment">
 a = "Spam "
 b = a * 4
 # Here multiplying a "Spam " by 4 concatenates (links) four strings
-=>"Spam Spam Spam Spam "
+=&gt;"Spam Spam Spam Spam "
 together
           </code></pre>
         </section>
@@ -536,15 +548,15 @@ together
           <p>Numeric data comes in two types: <strong>Integers</strong> and <strong>Floats</strong></p>
           <p>Integers are either <strong>Fixnum</strong> or <strong>Bignum</strong>. They do not have decimals.</p>
           <pre><code contenteditable class="ruby fragment">
-irb> 1_000_000_000_000_000_000.class
-  => Fixnum
-irb> 1_000_000_000_000_000_000_000.class
-  => Bignum
+irb&gt; 1_000_000_000_000_000_000.class
+  =&gt; Fixnum
+irb&gt; 1_000_000_000_000_000_000_000.class
+  =&gt; Bignum
           </code></pre>
           <p>Floats are numbers with at least one number to the left of a decimal point.</p>
           <pre><code contenteditable class="ruby fragment">
-            irb> 1.001.class
-              => Float
+            irb&gt; 1.001.class
+              =&gt; Float
           </code></pre>
         </section>
         <section>
@@ -582,11 +594,11 @@ irb> 1_000_000_000_000_000_000_000.class
           <pre><code contenteditable class="ruby fragment">
 # NOT true
 !true
-=> false
+=&gt; false
 
 # NOT false
 !false
-=> true
+=&gt; true
           </code></pre>
         </section>
         <section>
@@ -595,20 +607,20 @@ irb> 1_000_000_000_000_000_000_000.class
           <p class="fragment">Examples of what they will look like:</p>
           <pre><code contenteditable class="ruby fragment">
 # Arrays are used to hold sets of data.
-irb> array_of_numbers = [1,2,3]
-irb> array_of_numbers.first
-=> 1
+irb&gt; array_of_numbers = [1,2,3]
+irb&gt; array_of_numbers.first
+=&gt; 1
 
 # Ranges are used to express a sequence.
-irb> range_of_numbers = (1..5)
-irb> range_of_numbers.include?(4)
-=> true
+irb&gt; range_of_numbers = (1..5)
+irb&gt; range_of_numbers.include?(4)
+=&gt; true
 
 # Hashes are like dictionaries. You can look up a value by a key.
-irb> hash_of_key_to_value =
+irb&gt; hash_of_key_to_value =
   {
-    "Apple" => "A fruit.",
-    "Cucumber" => "A vegetable."
+    "Apple" =&gt; "A fruit.",
+    "Cucumber" =&gt; "A vegetable."
   }
           </code></pre>
         </section>
@@ -622,14 +634,14 @@ irb> hash_of_key_to_value =
           </ul>
           <pre>
             <code contenteditable class="ruby fragment">
-irb> puts "hello"
+irb&gt; puts "hello"
 hello
-=> nil
-irb> "2".to_i
-=> 2
-irb> 2.to_s
-=> "2"
-irb> "2" / 5
+=&gt; nil
+irb&gt; "2".to_i
+=&gt; 2
+irb&gt; 2.to_s
+=&gt; "2"
+irb&gt; "2" / 5
 NoMethodError: undefined method `/' for "2":String
             </code>
           </pre>
@@ -679,6 +691,55 @@ puts 'Pleased to meet you, ' + name + '. :)'
       </section>
 
       <section>
+        <section>
+          <h2>End of Day 1<span class="fragment">!!!</span></h2>
+        </section>
+
+        <section>
+          <h1>Homework!</h1>
+
+          <ul>
+            <li class="fragment">Join <a href="http://slack.gdicincy.com/" target="_blank">GDI Slack</a> &amp; #intro-to-ruby</li>
+            <li class="fragment">Complete the <a href="https://code.org/mc" target="hoc">Hour of Code</a></li>
+            <li class="fragment">Explore more of the <a href="http://tryruby.backcovesoftware.com" target="try-ruby">Try Ruby</a> challenges</li>
+            <li class="fragment">Bonus: Chapters 0&ndash;6 of <em><a href="https://pine.fm/LearnToProgram/" target="learn-to-program">Learn to Program</a></em></li>
+            <ul class="fragment">
+              <li><em>While you can follow the book's instructions and install Ruby on your computer, you may find it easier to use the online tool <a href="https://repl.it">repl.it</a></em></li>
+            </ul>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Next Week</h1>
+
+          <ul>
+            <li>Review homework</li>
+            <li>Flow control (<code>if/then/else</code> and friends)</li>
+            <li>Arrays and Hashes</li>
+            <li>Looping and Enumeration</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Upcoming Events</h3>
+          <div>
+            <br />
+            <h4>TBD</h4>
+            <h4><small>Some date, some time</small></h4>
+            <p><small>Sounds like this will be great!</small></p>
+            <br/>
+            <h4>Even more TBD!</h4>
+            <h4><small>Another date, another time</small></h4>
+            <p><small>Wow. Can't wait to see you there!</small></p>
+            <aside class="notes">Check with Becky for some upcoming events...</aside>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1>Supplemental Slides</h1>
+        </section>
         <section>
           <h1>Installing Ruby</h1>
           <h3>(supplemental)</h3>
@@ -816,55 +877,6 @@ puts 'Pleased to meet you, ' + name + '. :)'
           <img src="images/manls.png" >
         </section>
       </section>
-
-
-
-      <section>
-        <section>
-          <h2>End of Day 1<span class="fragment">!!!</span></h2>
-        </section>
-
-        <section>
-          <h1>Homework!</h1>
-
-          <ul>
-            <li class="fragment">Join <a href="http://slack.gdicincy.com/" target="_blank">GDI Slack</a> &amp; #intro-to-ruby</li>
-            <li class="fragment">Complete the <a href="https://code.org/mc" target="hoc">Hour of Code</a></li>
-            <li class="fragment">Explore more of the <a href="http://tryruby.backcovesoftware.com" target="try-ruby">Try Ruby</a> challenges</li>
-            <li class="fragment">Bonus: Chapters 0&ndash;6 of <em><a href="https://pine.fm/LearnToProgram/" target="learn-to-program">Learn to Program</a></em></li>
-            <ul class="fragment">
-              <li><em>While you can follow the book's instructions and install Ruby on your computer, you may find it easier to use the online tool <a href="https://repl.it">repl.it</a></em></li>
-            </ul>
-          </ul>
-        </section>
-
-        <section>
-          <h1>Next Week</h1>
-
-          <ul>
-            <li>Review homework</li>
-            <li>Flow control (<code>if/then/else</code> and friends)</li>
-            <li>Arrays and Hashes</li>
-            <li>Looping and Enumeration</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3>Upcoming Events</h3>
-          <div>
-            <br />
-            <h4>TBD</h4>
-            <h4><small>Some date, some time</small></h4>
-            <p><small>Sounds like this will be great!</small></p>
-            <br/>
-            <h4>Even more TBD!</h4>
-            <h4><small>Another date, another time</small></h4>
-            <p><small>Wow. Can't wait to see you there!</small></p>
-            <aside class="notes">Check with Becky for some upcoming events...</aside>
-          </div>
-        </section>
-      </section>
-
 
       </div> <!-- END OF SLIDES!!!1 -->
       <footer>
