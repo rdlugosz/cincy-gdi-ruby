@@ -46,7 +46,7 @@
           <h1>Intro to Ruby Programming</h1>
           <h3>GDI Cincinnati Chapter</h3>
           <p>
-            <small>Ryan Dlugosz 2016, based on the GDI Seattle course.</small>
+            <small>Ryan Dlugosz 2016, based on the GDI Seattle course</small>
           </p>
         </section>
 
@@ -73,8 +73,8 @@
               <li class="fragment">What is programming?</li>
               <li class="fragment">Why Ruby?</li>
               <li class="fragment">Variables, Arithmetic &amp; Data Types</li>
-              <li class="fragment">Methods and Error Messages</li>
-              <li class="fragment"><abbr title="Read-Evaluate-Print-Loop">REPLs</abbr> and Installing Ruby</li>
+              <!-- <li class="fragment">Methods and Error Messages</li> -->
+              <!-- <li class="fragment"><abbr title="Read-Evaluate-Print-Loop">REPLs</abbr> and Installing Ruby</li> -->
             </ul>
           </section>
           <section>
@@ -85,6 +85,7 @@
               <li class="fragment"><a href="mailto:ryan@dlugosz.net">ryan@dlugosz.net</a></li>
               <li class="fragment">GDI Slack: @ryandlugosz / #intro-to-ruby</li>
             </ul>
+            <img data-src="images/amelia-coding.gif" alt="" class="fragment">
           </section>
 
           <section>
@@ -94,12 +95,35 @@
               <li class="fragment">Who are you?</li>
               <li class="fragment">What do you hope to get out of this class?</li>
               <li class="fragment">What is your programming experience?</li>
-              <li class="fragment">What is your favorite food?</li>
+              <li class="fragment">What is your favorite food/restaurant?</li>
             </ol>
             <aside class="notes">
               Try to load all the names into the <a href="https://repl.it/CB7a/4" target="_blank">Greeter Demo</a> during intros...
             </aside>
           </section>
+
+          <section>
+            <h4>Greeter Code</h4>
+<pre><code data-trim data-noescape>
+<span class="fragment">
+puts "Hi, welcome to Intro to Ruby! What is everyone's name?"
+</span>
+<span class="fragment">while name = get_input_from_user</span>
+<span class="fragment">  break if name.empty?</span>
+<span class="fragment">  student_names &lt;&lt; name.capitalize</span>
+<span class="fragment">end</span>
+<span class="fragment">
+student_names.each do |student_name|</span>
+<span class="fragment">  puts "Hi #{student_name}, it is #{random_adverb.upcase} to meet you!"</span>
+<span class="fragment">end</span>
+<span class="fragment">
+def random_adverb
+  ["nice", "great", "wonderful"].shuffle.first
+end
+</span>
+</code></pre>
+          </section>
+
           <section>
             <h3>What can you expect from this class</h3>
             <ul>
@@ -134,15 +158,22 @@
             <li class="fragment">We use Programming Languages (code!) to <em>speak</em> to the computer.</li>
             <li class="fragment">Computers understand 1s and 0s</li>
             <li class="fragment"><em>Code</em> is human-readable</li>
-            <li class="fragment">Programming Languages over time have become more human-readable, but all end up as 1s and 0s</li>
+            <li class="fragment">Programming Languages over time have become more human-readable, but all end up as 1s and 0s&hellip;</li>
+            <br>
+            <li class="fragment">1s and 0s? <em>How does that even?</em></li>
+            <li class="fragment">Check out <a href="http://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?ie=UTF8&qid=1459970433&sr=8-1&keywords=code+petzold" target="_blank"><u>Code</u> by Charles Petzold</a></li>
           </ul>
           <aside class="notes">What is "a problem"? Pretty much anything from
-            adding two numbers to landing a satellite on an asteroid.</aside>
-        </section>
+          adding two numbers to landing a satellite on an
+          asteroid.<br>Regarding "1s and 0s... it's not even really numbers,
+          but "on and off"!</aside> </section>
 
         <section data-background="/images/lovelace-program.jpg" data-background-size="contain" data-transition-speed="slow" data-transition="fade-in">
-          <h2>Ada Lovelace</h2>
-          <div><img data-src="/images/ada.jpg" /></div>
+          <div class="fragment">
+            <h2>Ada Lovelace</h2>
+            <div><a href="https://en.wikipedia.org/wiki/Ada_Lovelace" target="_blank"><img data-src="/images/ada.jpg" /></a></div>
+            <div><a href="https://en.wikipedia.org/wiki/Ada_Lovelace" target="_blank">en.wikipedia.org/wiki/Ada_Lovelace</a></div>
+          </div>
           <aside class="notes">Ada Lovelace is generally regarded as the first
             computer programmer. She was a mathematician and wrote an algorithm
             that a machine could use to generate a specific series of numbers.
