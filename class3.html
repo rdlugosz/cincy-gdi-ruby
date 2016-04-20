@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>GDI Cincinnati -- Intro to Ruby Programming - Class 3</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+    <!-- dark editor--><link rel="stylesheet" href="lib/css/dark.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+            <img src="images/circle-gdi-logo.png" class="img--bare" height="268px" />
+          <h1>Intro to Ruby Programming</h1>
+          <h3>Class 3!</h3>
+          <h4>GDI Cincinnati Chapter</h4>
+          <p>
+            <small>Ryan Dlugosz 2016, based on the GDI Seattle course</small>
+          </p>
+        </section>
+
+        <!-- GDI Admin stuff -->
+        <section>
+          <section>
+            <h3>What we will cover today</h3>
+            <ul>
+              <li class="fragment">Homework</li>
+              <li class="fragment">High-powered encryption!</li>
+              <li class="fragment">Kata - How to Practice</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h3>Homework Review</h3>
+          <ul>
+            <li class="fragment">Instructions: <a href="http://www.meetup.com/Girl-Develop-It-Cincinnati/messages/boards/thread/49769081#129151528">Email</a></li>
+            <li class="fragment">Instructor's Solution: <a href="https://repl.it/CFV6/73">https://repl.it/CFV6/73</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Ruby Documentation</h3>
+          <ul>
+            <li class="fragment"><a href="http://ruby-doc.org">http://ruby-doc.org</a></li>
+            <li class="fragment"><a href="http://stackoverflow.com/questions/tagged/ruby">Stack Overflow</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Military-Grade Encryption*</h3>
+          <p class="fragment"><em>* - Don't actually use this for encryption!</em></p>
+
+          <p class="fragment">Let's build a class that can encrypt messages!</p>
+
+          <p class="fragment"><a href="https://repl.it/CFSJ/0">https://repl.it/CFSJ/0</a></p>
+        </section>
+
+        <section>
+          <h3>"Real" code time!</h3>
+          <p>Real production code from a Rails app I work on. While there are
+            more complicated parts, much of the code is small, simple classes
+            and methods like these.</p>
+        </section>
+
+        <section>
+          <h2>Kata</h2>
+          <p class="fragment"><em>detailed choreographed patterns of movements practised either solo or in pairs</em></p>
+          <img src="images/lily-belt.jpg" class="fragment" style="float: right; width: 30%" alt="">
+          <ul style="float: left; width: 60%;">
+            <li class="fragment">Programming is all about PRACTICE and FEEDBACK!</li>
+            <li class="fragment">&hellip;and REPETITION.</li>
+            <li class="fragment">Codewars: <a href="http://codewars.com">http://codewars.com</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>End of Day 3<span class="fragment">!!!</span></h2>
+          </section>
+
+          <section>
+            <h1>Homework!</h1>
+
+            <ul>
+              <li class="fragment">Send me an encrypted message!</li>
+              <li class="fragment">Get set up on CodeWars.com and begin training!</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Upcoming Events</h3>
+          </section>
+        </section>
+
+      </div> <!-- END OF SLIDES!!!1 -->
+      <footer>
+        <div class="copyright">
+          Intro to Ruby &ndash; Ryan Dlugosz &ndash; ruby.gdicincy.com
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc/4.0/80x15.png" width="50px" /></a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
