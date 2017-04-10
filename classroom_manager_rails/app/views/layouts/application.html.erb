@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classroom Manager Rails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="nav">
+  <ul>
+    <li>
+      <%= link_to "List Classrooms", classrooms_path %>
+    </li>
+    <li>
+      <%= link_to "List Students", students_path %>
+    </li>
+  </ul>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
