@@ -14,6 +14,10 @@
   <% end %>
 </ul>
 
+<% if @classroom.has_students? %>
+  <h3>Today's volunteer: <%= @classroom.volunteer.name %></h3>
+<% end %>
+
 <br />
 <br />
 <%= link_to 'Edit', edit_classroom_path(@classroom) %> |
