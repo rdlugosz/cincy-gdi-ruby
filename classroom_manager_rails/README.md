@@ -1,4 +1,5 @@
-== README
+README
+======
 
 This is a quick-and-dirty Rails app built to demonstrate how some of the same Ruby programming techniques we've learned would be used in a Rails web application.
 
@@ -6,7 +7,8 @@ Most of this app was built automatically using a tool called Rails Scaffolding, 
 
 A proper course on Rails will go into much more detail than we can here. This is just meant to give you a taste of the power of the Rails framework and to demonstrate how the very same Ruby coding techniques you're learning in class can be applied to a modern web application.
 
-=== In-class demo of Rails Scaffolds
+In-class demo of Rails Scaffolds
+--------------------------------
 
 In class, it may be helpful to demonstrate how these "scaffold" pages were generated. We can use the `Homework` class for this:
 
